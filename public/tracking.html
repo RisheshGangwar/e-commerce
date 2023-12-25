@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #e0f7fa; 
+            color: #333;
+        }
+
+        h1 {
+            color: #ff5252; 
+            margin-bottom: 20px;
+        }
+
+        .tracking-stage {
+            margin: 20px 0;
+            font-size: 18px;
+            color: #37474f; 
+            background-color: #ffffff; 
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .tracking-stage:hover {
+            transform: scale(1.02);
+        }
+
+        button {
+            background-color: #0288d1; 
+            color: #fff;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #01579b; 
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Order Tracking</h1>
+
+    <div class="tracking-stage" id="waitingForPickup">
+        <strong style="color: #ff5252;">Waiting for Pickup:</strong> Your order is awaiting pickup.
+    </div>
+
+    <div class="tracking-stage" id="shipped" style="display: none;">
+        <strong style="color: #4caf50;">Shipped:</strong> Your order has been shipped.
+    </div>
+
+    <div class="tracking-stage" id="outForDelivery" style="display: none;">
+        <strong style="color: #9c27b0;">Out for Delivery:</strong> Your order is out for delivery.
+    </div>
+
+    <div class="tracking-stage" id="orderDelivered" style="display: none;">
+        <strong style="color: #0288d1;">Order Delivered:</strong> Your order has been delivered.
+    </div>
+
+    <button onclick="returnHome()">Return to Home</button>
+
+    <script>
+        
+        setTimeout(() => {
+            document.getElementById('shipped').style.display = 'block';
+        }, 2000);
+
+        setTimeout(() => {
+            document.getElementById('outForDelivery').style.display = 'block';
+        }, 4000);
+
+        setTimeout(() => {
+            document.getElementById('orderDelivered').style.display = 'block';
+        }, 6000);
+
+        function returnHome() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+
+</html>

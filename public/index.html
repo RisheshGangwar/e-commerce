@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyOwn Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="app">
+        <div id="login">
+            <h3>Login:</h3>
+            <label for="loginUsername">Username:</label>
+            <input type="text" id="loginUsername" placeholder="Enter your username">
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" placeholder="Enter your password">
+            <button onclick="login()">Login</button>
+            <button onclick="guestLogin()">Guest Login</button>
+        </div>
+
+        <div id="register">
+            <h3>Register:</h3>
+            <label for="registerUsername">Username:</label>
+            <input type="text" id="registerUsername" placeholder="Choose a username">
+            <label for="registerPassword">Password:</label>
+            <input type="password" id="registerPassword" placeholder="Choose a password">
+            <button onclick="register()">Register</button>
+        </div>
+
+        <div id="main-content" style="display: none;">
+            <div id="discovery">
+                <label for="search">Search Products:</label>
+                <input type="text" id="search" placeholder="Type to search">
+                <label for="category">Category:</label>
+                <select id="category">
+                    <option value="">All Categories</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="home">Home & Kitchen</option>
+                    <option value="outdoor">Outdoor</option>
+                    <option value="books">Books</option>
+                </select>
+                <button id="selectProductBtn" onclick="selectSearchedProduct()">Select</button>
+            </div>
+
+            <div id="suggestion">
+                <h3>Suggested Products:</h3>
+                <ul id="suggestedProducts"></ul>
+            </div>
+
+            <div id="selection">
+                <h3>Selected Product:</h3>
+                <p id="selectedProduct"></p>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" value="1">
+                <label for="size">Size:</label>
+                <select id="size">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div id="cart">
+                <h3>Shopping Cart:</h3>
+                <ul id="cartItems"></ul>
+                <button onclick="reviewCart()">Review Cart</button>
+                <button onclick="placeOrder()">Place Order</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
